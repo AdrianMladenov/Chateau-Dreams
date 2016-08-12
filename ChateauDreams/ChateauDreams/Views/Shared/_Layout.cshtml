@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*<title>@ViewBag.Title - My ASP.NET Application</title>*@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,14 +17,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                <!--name of the site-->
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li> <!--just picture-->
+                    <li>@Html.ActionLink("Hotel", "Index", "Home")</li> <!--dropdownFor-->
+                    <li>@Html.ActionLink("About the valley", "About", "Home")</li>
+                    <li>@Html.ActionLink("Wine History", "About", "Home")</li>
+                    <li>@Html.ActionLink("Enotourism", "About", "Home")</li>
+                    <li>@Html.ActionLink("Reviews", "Index", "Comments")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Мнения", "Index", "Comments")</li>
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
