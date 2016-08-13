@@ -10,6 +10,8 @@ namespace ChateauDreams.Controllers
     {
         public ActionResult Index()
         {
+            
+
             return View();
         }
 
@@ -26,5 +28,13 @@ namespace ChateauDreams.Controllers
 
             return View();
         }
+
+        public ActionResult Create()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
     }
 }

@@ -6,7 +6,8 @@ using System.Web;
 
 namespace ChateauDreams.Models
 {
-    public class Comments
+    public class Review
+   
     {
         [Key]
         public int Id { get; set; }
