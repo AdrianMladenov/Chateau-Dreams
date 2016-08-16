@@ -11,11 +11,16 @@ namespace ChateauDreams.Models
     {
         public ReviewModels()
         {
+            
             this.Date = DateTime.Now;
         }
 
         [Key]
         public int Id { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public string Title { get; set; }
 
         [Required]
         [StringLength(300)]
