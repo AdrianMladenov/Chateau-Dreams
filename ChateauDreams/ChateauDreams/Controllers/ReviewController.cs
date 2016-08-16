@@ -27,12 +27,12 @@ namespace ChateauDreams.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review comments = db.Reviews.Find(id);
-            if (comments == null)
+            ReviewModels reviews = db.Reviews.Find(id);
+            if (reviews == null)
             {
                 return HttpNotFound();
             }
-            return View(comments);
+            return View(reviews);
         }
 
         // GET: Comments/Create
@@ -46,16 +46,16 @@ namespace ChateauDreams.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Text,Date")] Review comments)
+        public ActionResult Create([Bind(Include = "Id,Text,Date")] ReviewModels reviews)
         {
             if (ModelState.IsValid)
             {
-                db.Reviews.Add(comments);
+                db.Reviews.Add(reviews);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(comments);
+            return View(reviews);
         }
 
         // GET: Comments/Edit/5
@@ -65,12 +65,12 @@ namespace ChateauDreams.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review comments = db.Reviews.Find(id);
-            if (comments == null)
+            ReviewModels reviews = db.Reviews.Find(id);
+            if (reviews == null)
             {
                 return HttpNotFound();
             }
-            return View(comments);
+            return View(reviews);
         }
 
         // POST: Comments/Edit/5
@@ -78,15 +78,15 @@ namespace ChateauDreams.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Text,Date")] Review comments)
+        public ActionResult Edit([Bind(Include = "Id,Text,Date")] ReviewModels reviews)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(comments).State = EntityState.Modified;
+                db.Entry(reviews).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(comments);
+            return View(reviews);
         }
 
         // GET: Comments/Delete/5
@@ -96,12 +96,12 @@ namespace ChateauDreams.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review comments = db.Reviews.Find(id);
-            if (comments == null)
+            ReviewModels reviews = db.Reviews.Find(id);
+            if (reviews == null)
             {
                 return HttpNotFound();
             }
-            return View(comments);
+            return View(reviews);
         }
 
         // POST: Comments/Delete/5
@@ -109,8 +109,8 @@ namespace ChateauDreams.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Review comments = db.Reviews.Find(id);
-            db.Reviews.Remove(comments);
+            ReviewModels reviews = db.Reviews.Find(id);
+            db.Reviews.Remove(reviews);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

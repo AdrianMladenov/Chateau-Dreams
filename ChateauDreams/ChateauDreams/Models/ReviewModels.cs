@@ -6,9 +6,14 @@ using System.Web;
 
 namespace ChateauDreams.Models
 {
-    public class Review
+    public class ReviewModels
    
     {
+        public ReviewModels()
+        {
+            this.Date = DateTime.Now;
+        }
+
         [Key]
         public int Id { get; set; }
 
