@@ -198,9 +198,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EnotourismController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
-    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,8 +210,8 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\EnotourismModels.cs" />
     <Compile Include="Models\HotelModels.cs" />
-    <Compile Include="Models\ReviewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -320,11 +320,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Review\Create.cshtml" />
-    <Content Include="Views\Review\Delete.cshtml" />
-    <Content Include="Views\Review\Details.cshtml" />
-    <Content Include="Views\Review\Edit.cshtml" />
-    <Content Include="Views\Review\Index.cshtml" />
     <Content Include="Views\Shared\EditorTamplates\Date.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Hotel\HotelViewModel.cshtml" />
@@ -334,6 +329,16 @@
     <Content Include="Views\Enotourism\EnotourismViewModel.cshtml" />
     <Content Include="Views\Enotourism\EnotourismHistory.cshtml" />
     <Content Include="Views\Enotourism\TastingRooms.cshtml" />
+    <Content Include="Views\ReviewModels\Create.cshtml" />
+    <Content Include="Views\ReviewModels\Delete.cshtml" />
+    <Content Include="Views\ReviewModels\Details.cshtml" />
+    <Content Include="Views\ReviewModels\Edit.cshtml" />
+    <Content Include="Views\ReviewModels\Index.cshtml" />
+    <Content Include="Views\Reviews\Create.cshtml" />
+    <Content Include="Views\Reviews\Delete.cshtml" />
+    <Content Include="Views\Reviews\Details.cshtml" />
+    <Content Include="Views\Reviews\Edit.cshtml" />
+    <Content Include="Views\Reviews\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

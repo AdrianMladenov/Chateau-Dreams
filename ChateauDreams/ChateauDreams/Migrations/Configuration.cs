@@ -10,6 +10,7 @@ namespace ChateauDreams.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "ChateauDreams.Models.ApplicationDbContext";
         }
 
