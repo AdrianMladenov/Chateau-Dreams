@@ -7,14 +7,12 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    @*@Styles.Render("~/Content/jqueryui")*@
-    
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="colapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -23,24 +21,9 @@
                 <!--name of the site-->
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("IN VINO VERITAS", "Index", "Home")</li> <!--Here I suggest to be 
-                        may be a logo,or just the name of our shateau, not button ...and...just picture-->
-                    <li>@Html.ActionLink("Hotel", "Index", "Home") </li> <!--dropdownFor...
-                       subButtons - "About us", "Rooms", "Restaurant" ,"Reservation"-->
-                    <li>@Html.ActionLink("Enotourism", "About", "Home")</li><!--dropdownFor...
-                        subButtons -"Wine Tasting", "Our tasting room", "Enotourism History"   -->
-                    <li>@Html.ActionLink("Gallery", "Index", "Home")</li><!--calendar-->
-                    <li>@Html.ActionLink("Reviews", "Index", "Review")</li>
-                    <li>@Html.ActionLink("Contacts", "Contact", "Home")</li>
-                   @*<li>@Html.DropDownList("Hotel", new List<SelectListItem>
-                     {
-                          new SelectListItem{ Text = "Hotel", Value = "0" },
-                          new SelectListItem{ Text = "Gallery", Value = "1" }
-                     },   new { onchange = "getAlldata()" })</li>*@
-                </ul>
+
                 @Html.Partial("_LoginPartial")
-                @*<input type="date" name="name" value=" " />*@ <!--this will make a calendar, but only for Chrome-->
+
             </div>
         </div>
     </div>
@@ -51,39 +34,9 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @*@Scripts.Render("~/bundles/jqueryui")*@
-    @*<script>
-        $(function(){
-            $(".jqueryui-marker-datepicker").datepicker({
-                dateFormat:"yy-mm-dd",
-                changeYear:true,
-                showOn:"button"
-            }).css("display","inline-block").next("button").button({
-                icons:{ primary: "ui-icon-calendar"},
-                label:"Select a date",
-                text:false
-            });
-        });
-    </script>*@
-    @*<input id="datePicker" type="date" />
-        @section Scripts {
-            <script src="~/Scripts/jquery-ui-1.12.0.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $("#datePicker").datepicker({
-                        showOn: "button",
-                        buttonText: "Select Date"
-                    });
-                });
-            </script>*@     <!--may be we will need this code later...now it works,but only
-                              in Chrome-->
-        @*}*@
-        @*<script>
-                $.culture = "en-bg";
-            </script>*@
-        @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -9,19 +9,25 @@ namespace ChateauDreams.Controllers
 {
     public class HotelController : Controller
     {
-        //    List<SelectListItem> items = new List<SelectListItem>();
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
 
-        //    new SelectListItem{ Text = "Home To School", Value = "0" },
-        // items.Add(new SelectListItem
-        //    {
-        //        Text = "Cycling",
-        //        Value = "2",
-        //        Selected = true
-        //    });
-        //items.Add(new SelectListItem
-        //    {
-        //        Text = "Running",
-        //        Value = "3"
-        //    });
+            return View();
+        }
+
+        public ActionResult Rooms()
+        {
+            ViewBag.Message = "This is the page for room info.";
+
+            return View();
+        }
+
+        public ActionResult Restaurant()
+        {
+            ViewBag.Message = "This is the restaurant page.";
+
+            return View();
+        }
     }
 }
