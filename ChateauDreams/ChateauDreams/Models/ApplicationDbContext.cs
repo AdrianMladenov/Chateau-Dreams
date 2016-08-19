@@ -19,6 +19,6 @@ namespace ChateauDreams.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<ChateauDreams.Models.ReviewModels> Reviews { get; set; }
+        public System.Data.Entity.DbSet<ChateauDreams.Models.Review> Reviews { get; set; }
     }
 }

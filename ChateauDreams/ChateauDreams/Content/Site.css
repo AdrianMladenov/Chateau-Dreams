@@ -23,10 +23,10 @@ select,
 textarea {
     max-width: 280px;
 }
-/*html{ 
+html{ 
 background:url(../Content/Images/valley.jpg) no-repeat center center fixed; 
 background-size: cover;
-}*/
+}
 
 .menu
 .menu ul,
@@ -40,8 +40,8 @@ background-size: cover;
 }
 
 .menu{
-    height: 40px;
-    width: 700px;
+    height: inherit;
+    width: inherit;
     background: #4c4e5a;
     background: -webkit-linear-gradient(top,  #4c4e5a, 0%,#2c2d33 100%);
     background: -moz-linear-gradient(top,  #4c4e5a, 0%,#2c2d33 100%);
@@ -133,10 +133,8 @@ background-size: cover;
  
 .menu ul li:last-child a { border: none; }
 
-.container body-content{
-    background-color:yellow;
+.post{
+    background-color: #808080;
 }
-
-
     
 

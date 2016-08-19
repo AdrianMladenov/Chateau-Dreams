@@ -11,7 +11,7 @@ namespace ChateauDreams.Models
     public class ApplicationUser : IdentityUser
     {
         [StringLength(100)]
-        public string FullaName { get; set; }
+        public string FullName { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

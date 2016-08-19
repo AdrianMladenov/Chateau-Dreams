@@ -1,0 +1,32 @@
+﻿@using ChateauDreams.Classes;
+@model IEnumerable<ChateauDreams.Models.Review>
+ 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Reviews</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+@foreach (var item in Model) {
+
+    <article class="post col-md-4">
+        <h2>Review</h2>
+        <div>
+            Created on: <i>@Html.DisplayFor(modelItem => item.Date)</i>
+            by <i>@Html.DisplayFor(modelItem => item.Author.FullName)</i>
+            <p>@Utils.CutText(item.Body))</p>
+            <p>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })</p>
+        </div>
+        </article>
+        
+}
+
+
