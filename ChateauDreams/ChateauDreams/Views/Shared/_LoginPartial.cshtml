@@ -5,63 +5,18 @@
     {
         @Html.AntiForgeryToken()
 
-        <ul class="menu">
-            <li>
-                <a href="@Url.Action("About", "Hotel")">Hotel</a>
-                <ul>
-                    <li><a href="@Url.Action("About", "Hotel")">About us</a></li>
-                    <li><a href="@Url.Action("Rooms", "Hotel")">Rooms</a></li>
-                    <li><a href="@Url.Action("Restaurant", "Hotel")">Restaurant</a></li>
-                </ul>
-            </li>
-
-            <li>@Html.ActionLink("Reservations", "Index", "Reservation")</li>
-
-            <li>
-                <a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism</a>
-                <ul>
-                    <li><a href="@Url.Action("WineHistory", "Enotourism")">Wine History</a></li>
-                    <li><a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism History</a></li>
-                    <li><a href="@Url.Action("TastingRoom", "Enotourism")">Tasting Room</a></li>
-                </ul>
-            </li>
-            <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
-            <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
-            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+       
             <li>
                 @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
             </li>
 
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
+       
     }
 }
 else
 {
-    <ul class="menu">
-        <li>
-            <a href="@Url.Action("About", "Hotel")">Hotel</a>
-            <ul>
-                <li><a href="@Url.Action("About", "Hotel")">About us</a></li>
-                <li><a href="@Url.Action("Rooms", "Hotel")">Rooms</a></li>
-                <li><a href="@Url.Action("Restaurant", "Hotel")">Restaurant</a></li>
-            </ul>
-        </li>
-
-        <li>@Html.ActionLink("Reservations", "Index", "Reservation")</li>
-
-        <li>
-            <a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism</a>
-            <ul>
-                <li><a href="@Url.Action("WineHistory", "Enotourism")">Wine History</a></li>
-                <li><a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism History</a></li>
-                <li><a href="@Url.Action("TastingRoom", "Enotourism")">Tasting Room</a></li>
-            </ul>
-        </li>
-        <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
-        <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+
 }
