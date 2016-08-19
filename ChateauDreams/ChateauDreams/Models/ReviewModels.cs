@@ -11,6 +11,7 @@ namespace ChateauDreams.Models
     {
         public ReviewModels()
         {
+            
             this.Date = DateTime.Now;
         }
 
@@ -18,11 +19,17 @@ namespace ChateauDreams.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(200)]
+        public string Title { get; set; }
+
+        [Required]
         [StringLength(300)]
         public string Text { get; set; }
 
         [Required]
         public DateTime Date { get; set; }
+
+        
 
         [Required]
         public string Likes { get; set; }
