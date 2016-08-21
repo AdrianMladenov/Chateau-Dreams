@@ -8,8 +8,16 @@ namespace ChateauDreams.Models
 {
     public class Review
     {
+        public  Review()
+        {
+            this.Date = DateTime.Now;
+        }
+
         [Key]
         public int Id { get; set; }
+
+        [StringLength(50)]
+        public string Title { get; set; }
 
         [Required]
         [DataType(DataType.MultilineText)]

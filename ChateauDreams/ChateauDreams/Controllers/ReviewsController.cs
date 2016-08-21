@@ -17,7 +17,7 @@ namespace ChateauDreams.Controllers
         // GET: Reviews
         public ActionResult Index()
         {
-            return View(db.Reviews.Include(p => p.Author).ToList());
+            return View(db.Reviews.Include(p => p.Author).OrderByDescending(p => p.Date).ToList());
         }
 
         // GET: Reviews/Details/5
@@ -36,6 +36,7 @@ namespace ChateauDreams.Controllers
         }
 
         // GET: Reviews/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -45,11 +46,14 @@ namespace ChateauDreams.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)]
+        [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Body,Date")] Review review)
+        public ActionResult Create([Bind(Include = "Id,Title,Body")] Review review)
         {
             if (ModelState.IsValid)
             {
+                review.Author = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Reviews.Add(review);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -59,14 +63,15 @@ namespace ChateauDreams.Controllers
         }
 
         // GET: Reviews/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review review = db.Reviews.Find(id);
-            if (review == null)
+            Review review = db.Reviews.Include(p => p.Author).SingleOrDefault(p => p.Id == id);
+            if (review == null || !User.IsInRole("Administrators") && review.Author.UserName != User.Identity.Name)
             {
                 return HttpNotFound();
             }
@@ -77,8 +82,10 @@ namespace ChateauDreams.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrators")]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Body,Date")] Review review)
+        public ActionResult Edit([Bind(Include = "Id,Title,Body,Date")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -90,14 +97,15 @@ namespace ChateauDreams.Controllers
         }
 
         // GET: Reviews/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review review = db.Reviews.Find(id);
-            if (review == null)
+            Review review = db.Reviews.Include(p => p.Author).SingleOrDefault(p => p.Id == id);
+            if (review == null || !User.IsInRole("Administrators") && review.Author.UserName != User.Identity.Name)
             {
                 return HttpNotFound();
             }
@@ -106,6 +114,7 @@ namespace ChateauDreams.Controllers
 
         // POST: Reviews/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Administrators")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
