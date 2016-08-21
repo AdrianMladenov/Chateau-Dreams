@@ -136,5 +136,27 @@ background-size: cover;
 .post{
     background-color: #808080;
 }
+
+.sidebar{
+    float: left;
+    width: 10%;
+    height: 80%;
+    color: white;
+    font: 32px Lato;
+    font-weight: 100;
+    text-align: center;
+    top:40px;
+    left: -10px;
+    bottom: 0;
+    position: absolute;
+}
+.pictures a img {
+    width: 117px;
+    height: 100px;
+}
+
+.text{
+    text-align: justify;
+}
     
 
