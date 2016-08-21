@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChateauDreams.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -9,9 +10,10 @@ namespace ChateauDreams.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-
+            
             return View();
         }
 

@@ -23,10 +23,10 @@ select,
 textarea {
     max-width: 280px;
 }
-html{ 
+/*html{ 
 background:url(../Content/Images/valley.jpg) no-repeat center center fixed; 
 background-size: cover;
-}
+}*/
 
 .menu
 .menu ul,
@@ -133,8 +133,6 @@ background-size: cover;
  
 .menu ul li:last-child a { border: none; }
 
-.post{
-    background-color: #808080;
-}
+
     
 

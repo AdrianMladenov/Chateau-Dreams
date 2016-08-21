@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using ChateauDreams.Models;
+using System.Data.Entity.Migrations;
 
 namespace ChateauDreams
 {
@@ -20,6 +21,10 @@ namespace ChateauDreams
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var configuration = new Migrations.Configuration();
+            var migrator = new DbMigrator(configuration);
+            migrator.Update();
         }
     }
 }

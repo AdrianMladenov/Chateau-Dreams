@@ -9,16 +9,17 @@ namespace ChateauDreams.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Review> Reviews { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static ApplicationDbContext Create() //create before
         {
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<ChateauDreams.Models.Review> Reviews { get; set; }
+       // public System.Data.Entity.DbSet<ChateauDreams.Models.Review> Reviews { get; set; }
     }
 }

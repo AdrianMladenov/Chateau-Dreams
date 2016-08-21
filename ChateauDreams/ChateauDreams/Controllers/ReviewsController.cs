@@ -17,7 +17,8 @@ namespace ChateauDreams.Controllers
         // GET: Reviews
         public ActionResult Index()
         {
-            return View(db.Reviews.Include(p => p.Author).ToList());
+            var reviews = db.Reviews.Include(r => r.Author).OrderByDescending(r => r.Date).Take(5);
+            return View(reviews.ToList());
         }
 
         // GET: Reviews/Details/5
