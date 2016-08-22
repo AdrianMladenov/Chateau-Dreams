@@ -54,6 +54,7 @@ background-size: cover;
 }
 
 .menu li{
+   
     position:relative;
     list-style:none;
     float:left;
@@ -156,5 +157,6 @@ background-size: cover;
 .text{
     text-align: justify;
 }
+
     
 

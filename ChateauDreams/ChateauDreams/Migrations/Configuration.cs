@@ -141,12 +141,12 @@ namespace ChateauDreams.Migrations
         private void CreateReview(ApplicationDbContext context,
             string title, string body, DateTime date, string authorUsername)
         {
-            var post = new Review();
-            post.Title = title;
-            post.Body = body;
-            post.Date = date;
-            post.Author = context.Users.Where(u => u.UserName == authorUsername).FirstOrDefault();
-            context.Reviews.Add(post);
+            var review = new Review();
+            review.Title = title;
+            review.Body = body;
+            review.Date = date;
+            review.Author = context.Users.Where(u => u.UserName == authorUsername).FirstOrDefault();
+            context.Reviews.Add(review);
         }
     }
 }

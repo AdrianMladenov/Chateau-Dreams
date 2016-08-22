@@ -329,7 +329,7 @@
     <Content Include="Views\Enotourism\WineHistory.cshtml" />
     <Content Include="Views\Enotourism\EnotourismViewModel.cshtml" />
     <Content Include="Views\Enotourism\EnotourismHistory.cshtml" />
-    <Content Include="Views\Enotourism\TastingRooms.cshtml" />
+    <Content Include="Views\Enotourism\TastingRoom.cshtml" />
     <Content Include="Views\Reviews\Create.cshtml" />
     <Content Include="Views\Reviews\Delete.cshtml" />
     <Content Include="Views\Reviews\Details.cshtml" />
