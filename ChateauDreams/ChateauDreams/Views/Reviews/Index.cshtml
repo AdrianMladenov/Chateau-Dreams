@@ -16,16 +16,17 @@
 @foreach (var review in Model)
 {
 
-    <article class="post col-md-4">
-        <h2>Review</h2>
-        <div>Title: @Html.DisplayFor(modelItem => review.Title)</div>
+    <article class="post col-md-12">
+        <h4>
+        <div> @Html.DisplayFor(modelItem => review.Title)</div>
+        </h4>
         by
         @if (review.Author == null)
         {
             <i> No Author</i>;
         }
         <i>@Html.DisplayFor(modelItem => review.Author.FullName)</i>;
-
+      
         <div>
             Created on: <i>@Html.DisplayFor(modelItem => review.Date)</i>
             <p>@Utils.CutText(review.Body))</p>

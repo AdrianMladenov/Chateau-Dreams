@@ -16,8 +16,7 @@ namespace ChateauDreams.Models
         [Key]
         public int Id { get; set; }
         // title
-        [Required]
-        public string Title { get; set; }
+       
 
         [StringLength(50)]
         public string Title { get; set; }
