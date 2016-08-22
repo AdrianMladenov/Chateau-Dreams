@@ -330,11 +330,6 @@
     <Content Include="Views\Enotourism\EnotourismViewModel.cshtml" />
     <Content Include="Views\Enotourism\EnotourismHistory.cshtml" />
     <Content Include="Views\Enotourism\TastingRooms.cshtml" />
-    <Content Include="Views\ReviewModels\Create.cshtml" />
-    <Content Include="Views\ReviewModels\Delete.cshtml" />
-    <Content Include="Views\ReviewModels\Details.cshtml" />
-    <Content Include="Views\ReviewModels\Edit.cshtml" />
-    <Content Include="Views\ReviewModels\Index.cshtml" />
     <Content Include="Views\Reviews\Create.cshtml" />
     <Content Include="Views\Reviews\Delete.cshtml" />
     <Content Include="Views\Reviews\Details.cshtml" />

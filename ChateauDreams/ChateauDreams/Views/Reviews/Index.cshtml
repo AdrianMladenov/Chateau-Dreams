@@ -1,6 +1,6 @@
 ﻿@using ChateauDreams.Classes;
 @model IEnumerable<ChateauDreams.Models.Review>
- 
+
 
 @{
     ViewBag.Title = "Index";
@@ -13,22 +13,38 @@
 </p>
 
 
-@foreach (var review in Model) {
+@foreach (var review in Model)
+{
 
     <article class="post col-md-4">
-        <h2>@review.Title</h2>
+        <h2>Review</h2>
+        <div>Title: @Html.DisplayFor(modelItem => review.Title)</div>
+        by
+        @if (review.Author == null)
+        {
+            <i> No Author</i>;
+        }
+        <i>@Html.DisplayFor(modelItem => review.Author.FullName)</i>;
+
         <div>
-           <!--in <td> in demo-->
             Created on: <i>@Html.DisplayFor(modelItem => review.Date)</i>
-            by <i>@Html.DisplayFor(modelItem => review.Author.FullName)</i><!--TODO if there is no author-->
-            <a href="~/Views/Reviews/Index.cshtml">~/Views/Reviews/Index.cshtml</a>
             <p>@Utils.CutText(review.Body))</p>
-            <p>@Html.ActionLink("Edit", "Edit", new { id = review.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = review.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = review.Id })</p>
+
+            @if (User.IsInRole("Administrators") || review.Author != null && User.Identity.Name == review.Author.UserName)
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = review.Id })@:|
+            }
+ 
+            @if (User.IsInRole("Administrators") || review.Author != null && User.Identity.Name == review.Author.UserName)
+            {
+                   @Html.ActionLink("Delete", "Delete", new { id = review.Id })@:|
+            }
+
+            @Html.ActionLink("Details", "Details", new { id = review.Id })
+
         </div>
-        </article>
-        
+    </article>
+
 }
 
 
