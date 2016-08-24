@@ -12,18 +12,27 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-
-@foreach (var review in Model)
+@*@if (Model == null || !Model.Any())
 {
+    <h3>No reviews</h3>
+}*@
+@*else
+{*@
+
+
+
+
+    @foreach (var review in Model)
+    {
 
     <article class="post col-md-12">
         <h4>
         <div> @Html.DisplayFor(modelItem => review.Title)</div>
         </h4>
         by
-        @if (review.Author == null)
+        @if (review.Author.FullName == null)
         {
-            <i> No Author</i>;
+            <i>Anonymous</i>;
         }
         <i>@Html.DisplayFor(modelItem => review.Author.FullName)</i>;
       
@@ -45,7 +54,18 @@
 
         </div>
     </article>
+        // }
 
-}
+      
+    }
+@*<ul class="pagination">
+    @for (int page = 1; page <= ViewBag.TotalPages; page++)
+    {
+        @:
+        <li>@Html.ActionLink(page, "Index", "ReviewsController")</li>
+           }
+</ul>*@
+
+
 
 

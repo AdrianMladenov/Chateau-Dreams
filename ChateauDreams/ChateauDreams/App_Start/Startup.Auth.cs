@@ -12,6 +12,13 @@ namespace ChateauDreams
     public partial class Startup
     {
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
+
+
+
+
+
+
+
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
@@ -54,15 +61,16 @@ namespace ChateauDreams
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "276509012734120",
+               appSecret: "c087f721c58a089bd98191b7dd8195cf");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "526697867003-bi8muv1l862cq26p924tps1agtn807iv.apps.googleusercontent.com",
+            //    ClientSecret = "5-qYOG9-4vyWpOWjMDe6iPG4"
             //});
+
         }
     }
 }

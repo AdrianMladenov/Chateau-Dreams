@@ -10,5 +10,6 @@ namespace ChateauDreams
         {
             ConfigureAuth(app);
         }
+        
     }
 }
