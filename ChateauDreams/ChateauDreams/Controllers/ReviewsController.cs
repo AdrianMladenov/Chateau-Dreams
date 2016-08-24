@@ -18,7 +18,7 @@ namespace ChateauDreams.Controllers
         // GET: Reviews and make them in pages.
         public ActionResult Index(int? page)
         {
-            var reviews = db.Reviews.Include(r => r.Author).OrderByDescending(r => r.Date).Take(5).ToList();
+            var reviews = db.Reviews.Include(r => r.Author).OrderByDescending(r => r.Date).ToList();
             int pageSize = 3;
             int pageNumber = (page ?? 1);
             return View(reviews.ToPagedList(pageNumber, pageSize));
