@@ -1,9 +1,12 @@
 ﻿@using ChateauDreams.Classes;
-@model IEnumerable<ChateauDreams.Models.Review>
+@*@model IEnumerable<ChateauDreams.Models.Review>*@
+@model PagedList.IPagedList<ChateauDreams.Models.Review>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Review";
 }
 
 <h2>Reviews</h2>
@@ -12,27 +15,18 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@*@if (Model == null || !Model.Any())
+
+@foreach (var review in Model)
 {
-    <h3>No reviews</h3>
-}*@
-@*else
-{*@
-
-
-
-
-    @foreach (var review in Model)
-    {
 
     <article class="post col-md-12">
         <h4>
         <div> @Html.DisplayFor(modelItem => review.Title)</div>
         </h4>
         by
-        @if (review.Author.FullName == null)
+        @if (review.Author == null)
         {
-            <i>Anonymous</i>;
+            <i> No Author</i>;
         }
         <i>@Html.DisplayFor(modelItem => review.Author.FullName)</i>;
       
@@ -54,18 +48,10 @@
 
         </div>
     </article>
-        // }
 
-      
-    }
-@*<ul class="pagination">
-    @for (int page = 1; page <= ViewBag.TotalPages; page++)
-    {
-        @:
-        <li>@Html.ActionLink(page, "Index", "ReviewsController")</li>
-           }
-</ul>*@
+}
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 
 

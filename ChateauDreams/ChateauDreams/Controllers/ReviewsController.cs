@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ChateauDreams.Models;
+using PagedList;
 
 namespace ChateauDreams.Controllers
 {
@@ -14,13 +15,14 @@ namespace ChateauDreams.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Reviews
-        public ActionResult Index()
+        // GET: Reviews and make them in pages.
+        public ActionResult Index(int? page)
         {
-
-
             var reviews = db.Reviews.Include(r => r.Author).OrderByDescending(r => r.Date).ToList();
-            return View(reviews);
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(reviews.ToPagedList(pageNumber, pageSize));
+
         }
 
         // GET: Reviews/Details/5
@@ -135,6 +137,5 @@ namespace ChateauDreams.Controllers
             }
             base.Dispose(disposing);
         }
-       
     }
 }
