@@ -6,7 +6,8 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/add-class-on-current-li.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,39 +21,34 @@
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
                 <!--name of the site-->
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="menu">
-                    <li>
-                        <a href="@Url.Action("About", "Hotel")">Hotel</a>
-                        <ul>
-                            <li><a href="@Url.Action("About", "Hotel")">About us</a></li>
-                            <li><a href="@Url.Action("Rooms", "Hotel")">Rooms</a></li>
-                            <li><a href="@Url.Action("Restaurant", "Hotel")">Restaurant</a></li>
-                        </ul>
-                    </li>
+            <div class="navbar-collapse collapse nav">
+                    <ul class="menu">
+                        <li>
+                            <a href="@Url.Action("About", "Hotel")">Hotel</a>
+                            <ul>
+                                <li><a href="@Url.Action("About", "Hotel")">About us</a></li>
+                                <li><a href="@Url.Action("Rooms", "Hotel")">Rooms</a></li>
+                                <li><a href="@Url.Action("Restaurant", "Hotel")">Restaurant</a></li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Reservations", "Index", "Reservation")</li>
 
-                    <li>@Html.ActionLink("Reservations", "Index", "Reservation")</li>
-
-                    <li>
-                        <a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism</a>
-                        <ul>
-                            <li><a href="@Url.Action("WineHistory", "Enotourism")">Wine History</a></li>
-                            <li><a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism History</a></li>
-                            <li><a href="@Url.Action("TastingRoom", "Enotourism")">Tasting Room</a></li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
-                    <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-                    @Html.Partial("_LoginPartial")
-                </ul>
-          
+                        <li>
+                            <a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism</a>
+                            <ul>
+                                <li><a href="@Url.Action("WineHistory", "Enotourism")">Wine History</a></li>
+                                <li><a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism History</a></li>
+                                <li><a href="@Url.Action("TastingRoom", "Enotourism")">Tasting Room</a></li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Gallery", "#", "Gallery")</li>
+                        <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        @Html.Partial("_LoginPartial")
+                    </ul>
+                </div>
             </div>
-
         </div>
-
-    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
