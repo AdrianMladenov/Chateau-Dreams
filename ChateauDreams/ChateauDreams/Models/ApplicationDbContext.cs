@@ -21,6 +21,12 @@ namespace ChateauDreams.Models
             return new ApplicationDbContext();
         }
 
-       // public System.Data.Entity.DbSet<ChateauDreams.Models.Review> Reviews { get; set; }
+        public System.Data.Entity.DbSet<ChateauDreams.Models.EnotourismModels.WineHistory> WineHistories { get; set; }
+
+        public System.Data.Entity.DbSet<ChateauDreams.Models.EnotourismModels.EnotourismHistory> EnotourismHistories { get; set; }
+
+        public System.Data.Entity.DbSet<ChateauDreams.Models.EnotourismModels.TastingRoom> TastingRooms { get; set; }
+
+        // public System.Data.Entity.DbSet<ChateauDreams.Models.Review> Reviews { get; set; }
     }
 }

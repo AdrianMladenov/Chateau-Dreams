@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ChateauDreams.Models;
 using PagedList;
+using ChateauDreams.Extensions;
 
 namespace ChateauDreams.Controllers
 {
@@ -61,6 +62,7 @@ namespace ChateauDreams.Controllers
                 review.Author = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Reviews.Add(review);
                 db.SaveChanges();
+                this.AddNotification("Review created.", NotificationType.INFO);
                 return RedirectToAction("Index");
             }
 

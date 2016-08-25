@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ChateauDreams.Models.EnotourismModels.TastingRoom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 class="headers">Tasting Room</h1>
+
+<a href="~/Content/Images/13.jpg">
+    <img src="~/Content/Images/13.jpg" />
+</a>
+@foreach (var story in Model)
+{
+    <div class="text">
+        <h2>@Html.DisplayFor(modelItem => story.Title)</h2>
+
+        <p>@Html.DisplayFor(modelItem => story.Body)</p>
+    </div>
+
+    if (User.IsInRole("Administrators"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = story.Id }) @:|
+        @Html.ActionLink("Delete", "Delete", new { id = story.Id })
+    }
+
+}
+
+@if (User.IsInRole("Administrators"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+

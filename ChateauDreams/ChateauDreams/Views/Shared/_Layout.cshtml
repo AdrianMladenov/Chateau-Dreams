@@ -21,6 +21,7 @@
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
                 <!--name of the site-->
             </div>
+<<<<<<< HEAD
             <div class="navbar-collapse collapse nav">
                     <ul class="menu">
                         <li>
@@ -32,6 +33,32 @@
                             </ul>
                         </li>
                         <li>@Html.ActionLink("Reservations", "Index", "Reservation")</li>
+=======
+            <div class="navbar-collapse collapse">
+                <ul class="menu">
+                    <li>
+                        <a href="@Url.Action("About", "Hotel")">Hotel</a>
+                        <ul>
+                            <li><a href="@Url.Action("About", "Hotel")">About us</a></li>
+                            <li><a href="@Url.Action("Rooms", "Hotel")">Rooms</a></li>
+                            <li><a href="@Url.Action("Restaurant", "Hotel")">Restaurant</a></li>
+                        </ul>
+                    </li>
+
+                    <li>@Html.ActionLink("Reservations", "Index", "Reservation")</li>
+
+                    <li>
+                        <a href="@Url.Action("Index", "EnotourismHistories")">Enotourism</a>
+                        <ul>
+                            <li><a href="@Url.Action("Index", "WineHistories")">Wine History</a></li>
+                            <li><a href="@Url.Action("Index", "EnotourismHistories")">Enotourism History</a></li>
+                            <li><a href="@Url.Action("Index", "TastingRooms")">Tasting Room</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
+                    <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+>>>>>>> origin/master
 
                         <li>
                             <a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism</a>
@@ -50,6 +77,7 @@
             </div>
         </div>
     <div class="container body-content">
+        @Html.Partial("_Notifications")
         @RenderBody()
         <hr />
         <footer>

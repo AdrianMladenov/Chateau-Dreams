@@ -150,6 +150,7 @@ background-size: cover;
     text-align: justify;
 }
 
+<<<<<<< HEAD
 /*add some good things in active <li>*/
 
 .nav li.active {
@@ -158,6 +159,17 @@ background-size: cover;
     border-color: lightgreen;
     transition: all .2s ease-in;
 }
+=======
+.headers{
+    text-align: center;
+}
+
+.tasting{
+    image-orientation:inherit;
+}
+
+    
+>>>>>>> origin/master
 
     .nav li.active a {
         color: #fff;
