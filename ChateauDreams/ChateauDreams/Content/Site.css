@@ -158,5 +158,13 @@ background-size: cover;
     text-align: justify;
 }
 
+.headers{
+    text-align: center;
+}
+
+.tasting{
+    image-orientation:inherit;
+}
+
     
 

@@ -34,11 +34,11 @@
                     <li>@Html.ActionLink("Reservations", "Index", "Reservation")</li>
 
                     <li>
-                        <a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism</a>
+                        <a href="@Url.Action("Index", "EnotourismHistories")">Enotourism</a>
                         <ul>
-                            <li><a href="@Url.Action("WineHistory", "Enotourism")">Wine History</a></li>
-                            <li><a href="@Url.Action("EnotourismHistory", "Enotourism")">Enotourism History</a></li>
-                            <li><a href="@Url.Action("TastingRoom", "Enotourism")">Tasting Room</a></li>
+                            <li><a href="@Url.Action("Index", "WineHistories")">Wine History</a></li>
+                            <li><a href="@Url.Action("Index", "EnotourismHistories")">Enotourism History</a></li>
+                            <li><a href="@Url.Action("Index", "TastingRooms")">Tasting Room</a></li>
                         </ul>
                     </li>
                     <li>@Html.ActionLink("Gallery", "Index", "Gallery")</li>
