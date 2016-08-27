@@ -60,6 +60,7 @@ background:url(../Content/Images/valley.jpg) no-repeat center center fixed;
 
 
         .menu li a {
+            
             display: block;
             padding: 0 14px;
             margin: 6px 0;
@@ -164,3 +165,4 @@ background:url(../Content/Images/valley.jpg) no-repeat center center fixed;
         font-weight: bold;
         margin-bottom: 5px;
     }
+    
