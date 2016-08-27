@@ -1,5 +1,4 @@
 ﻿@using ChateauDreams.Classes;
-@*@model IEnumerable<ChateauDreams.Models.Review>*@
 @model PagedList.IPagedList<ChateauDreams.Models.Review>
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
@@ -32,7 +31,7 @@
       
         <div>
             Created on: <i>@Html.DisplayFor(modelItem => review.Date)</i>
-            <p>@Utils.CutText(review.Body))</p>
+            <p>@Html.Raw(@Utils.CutText(review.Body))</p>
 
             @if (User.IsInRole("Administrators") || review.Author != null && User.Identity.Name == review.Author.UserName)
             {
@@ -54,7 +53,9 @@
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions()
 {
     Display = PagedListDisplayMode.IfNeeded,
-    DisplayPageCountAndCurrentLocation = true
+    DisplayPageCountAndCurrentLocation = true,
+    MaximumPageNumbersToDisplay = 5
+
 })
 
 
