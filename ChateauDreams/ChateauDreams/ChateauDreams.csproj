@@ -227,7 +227,7 @@
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\HotelModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ReservationsModels.cs" />
+    <Compile Include="Models\Reservations.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

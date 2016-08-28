@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ChateauDreams.Models
 {
-    public class ReservationsModels
+    public class Reservations
     {
         public int Id { get; set; }
 
