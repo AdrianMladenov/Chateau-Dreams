@@ -23,7 +23,7 @@
         <div> @Html.DisplayFor(modelItem => review.Title)</div>
         </h4>
         by
-        @if (review.Author.FullName == null)
+        @if (review.Author == null)
         {
             <i> No Author</i>;
         }
