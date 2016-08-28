@@ -55,7 +55,7 @@ namespace ChateauDreams.Controllers
         [ValidateInput(false)]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body")] Review review)
+        public ActionResult Create([Bind(Include = "Id,Title,Text")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace ChateauDreams.Controllers
         [Authorize(Roles = "Administrators")]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Body,Date")] Review review)
+        public ActionResult Edit([Bind(Include = "Id,Title,Text")] Review review)
         {
             if (ModelState.IsValid)
             {

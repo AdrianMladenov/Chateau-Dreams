@@ -32,7 +32,7 @@
       
         <div>
             Created on: <i>@Html.DisplayFor(modelItem => review.Date)</i>
-            <p>@Utils.CutText(review.Body))</p>
+            <p>@Utils.CutText(review.Text)</p>
 
             @if (User.IsInRole("Administrators") || review.Author != null && User.Identity.Name == review.Author.UserName)
             {

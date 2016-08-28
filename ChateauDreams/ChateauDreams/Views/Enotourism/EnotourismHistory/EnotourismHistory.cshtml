@@ -4,36 +4,29 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1 class="headers">Enotourism History</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Body)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Body)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@foreach (var story in Model)
+{
+    <div class="text">
+        <h2>@Html.DisplayFor(modelItem => story.Title)</h2>
+
+        <p>@Html.DisplayFor(modelItem => story.Body)</p>
+    </div>
+
+    if (User.IsInRole("Administrators"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = story.Id }) @:|
+        @Html.ActionLink("Delete", "Delete", new { id = story.Id })
+    }
+
 }
 
-</table>
+@if (User.IsInRole("Administrators"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+

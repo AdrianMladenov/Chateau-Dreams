@@ -23,7 +23,7 @@
             <div class="navbar-collapse collapse nav">
                 <ul class="menu">
                     <li>
-                        <a href="@Url.Action("About", "Hotel")">Hotel</a>
+                        <a href="#">Hotel</a>
                         <ul>
                             <li><a href="@Url.Action("About", "Hotel")">About us</a></li>
                             <li><a href="@Url.Action("Rooms", "Hotel")">Rooms</a></li>
@@ -33,7 +33,7 @@
                     <li>@Html.ActionLink("Reservations", "Index", "Reservation")</li>
 
                     <li>
-                        <a href="@Url.Action("Index", "EnotourismHistory")">Enotourism</a>
+                        <a href="#">Enotourism</a>
                         <ul>
                             <li><a href="@Url.Action("Index", "WineHistory")">Wine History</a></li>
                             <li><a href="@Url.Action("Index", "EnotourismHistory")">Enotourism History</a></li>
@@ -45,7 +45,6 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     @Html.Partial("_LoginPartial")
                 </ul>
-                
             </div>
         </div>
     </div>
