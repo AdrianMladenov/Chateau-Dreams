@@ -12,6 +12,11 @@ function setNavigation() {
         var href = $(this).attr('href');
         if (path.substring(0, href.length) === href) {
             $(this).closest('li').addClass('active');
+            ($(this).parents().addClass('active'));
         }
     });
+}
+
+function penka() {
+
 }
