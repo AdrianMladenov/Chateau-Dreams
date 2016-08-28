@@ -31,7 +31,7 @@ namespace ChateauDreams.Migrations
 
                 CreateReview(context,
                     title: "Really great place",
-                    body: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
+                    text: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
                    Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.
                     </p>",
                     date: new DateTime(2016, 03, 27, 17, 53, 48),
@@ -40,7 +40,7 @@ namespace ChateauDreams.Migrations
 
                 CreateReview(context,
                     title: "Really great place",
-                    body: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
+                    text: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
                    Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.
                     </p>",
                     date: new DateTime(2016, 05, 11, 08, 22, 03),
@@ -49,7 +49,7 @@ namespace ChateauDreams.Migrations
 
                 CreateReview(context,
                     title: "Really great place",
-                    body: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
+                    text: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
                    Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.
                     </p>",
                     date: new DateTime(2016, 03, 27, 17, 53, 48),
@@ -58,7 +58,7 @@ namespace ChateauDreams.Migrations
 
                 CreateReview(context,
                     title: "Really great place",
-                     body: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
+                     text: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
                    Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.
                     </p>",
                     date: new DateTime(2016, 02, 18, 22, 14, 38),
@@ -67,7 +67,7 @@ namespace ChateauDreams.Migrations
 
                 CreateReview(context,
                     title: "Really great place",
-                     body: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
+                     text: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
                    Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.
                     </p>",
                     date: new DateTime(2016, 04, 11, 19, 02, 05),
@@ -76,7 +76,7 @@ namespace ChateauDreams.Migrations
 
                 CreateReview(context,
                     title: "Really great place",
-                   body: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
+                   text: @"<p>Exceptional view.Delicious wines.Excellent Sunday lunch.
                    Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.Exceptional view.Delicious wines.Excellent Sunday lunch.
                     </p>",
                     date: new DateTime(2016, 06, 30, 17, 36, 52),
@@ -139,11 +139,11 @@ namespace ChateauDreams.Migrations
         }
 
         private void CreateReview(ApplicationDbContext context,
-            string title, string body, DateTime date, string authorUsername)
+            string title, string text, DateTime date, string authorUsername)
         {
             var review = new Review();
             review.Title = title;
-            review.Body = body;
+            review.Text = text;
             review.Date = date;
             review.Author = context.Users.Where(u => u.UserName == authorUsername).FirstOrDefault();
             context.Reviews.Add(review);

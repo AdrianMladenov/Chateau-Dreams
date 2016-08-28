@@ -5,7 +5,7 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
+    padding-left: 35px;
     padding-right: 15px;
 }
 
@@ -30,10 +30,12 @@ textarea {
 }*/
 
 /*#region Start Live Menu("dropdown menu") css*/
-.menu .menu ul,
-.menu li .menu a {
+.menu,
+.menu ul,
+.menu li,
+.menu a {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     border: none;
     outline: none;
 }
@@ -93,6 +95,7 @@ textarea {
         -moz-transition: opacity .25s ease .1s;
         -o-transition: opacity .25s ease .1s;
         transition: opacity .25s ease .1s;
+        width: 150px;
     }
 
     .menu li:hover > ul {
@@ -116,8 +119,8 @@ textarea {
     }
 
     .menu ul li a {
-        width: 200px;
-        padding: 4px 0 4px 40px;
+        width: 150px;
+        padding: 4px 0 4px 13px;
         margin: 0;
         border: none;
         border-bottom: 1px solid #353539;
