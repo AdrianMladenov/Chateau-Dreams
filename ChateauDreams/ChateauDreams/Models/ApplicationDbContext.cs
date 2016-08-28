@@ -27,6 +27,8 @@ namespace ChateauDreams.Models
 
         public System.Data.Entity.DbSet<ChateauDreams.Models.Enotourism.TastingRoom> TastingRooms { get; set; }
 
+        public System.Data.Entity.DbSet<ChateauDreams.Models.Reservations> Reservations { get; set; }
+
         // public System.Data.Entity.DbSet<ChateauDreams.Models.Review> Reviews { get; set; }
     }
 }
