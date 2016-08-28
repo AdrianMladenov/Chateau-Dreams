@@ -23,19 +23,16 @@ select,
 textarea {
     max-width: 280px;
 }
-
-.wrapper {
-    background: url(../Content/Images/valley.jpg) no-repeat center center fixed;
-    /*background-size: cover;*/
+.wrapper{ 
+background:url(../Content/Images/valley.jpg) no-repeat center center fixed; 
+/*background-size: cover;*/
 }
 
-/*#regionstart Live Menu("dropdown menu") css*/
-.menu,
-.menu ul,
-.menu li,
-.menu a {
+/*#region Start Live Menu("dropdown menu") css*/
+.menu .menu ul,
+.menu li .menu a {
     margin: 0;
-    padding: 0px;
+    padding: 0;
     border: none;
     outline: none;
 }
@@ -79,7 +76,6 @@ textarea {
             -moz-transition: color .2s ease-in-out;
             -o-transition: color .2s ease-in-out;
             transition: color .2s ease-in-out;
-            
         }
 
     .menu ul {
@@ -95,21 +91,20 @@ textarea {
         -moz-transition: opacity .25s ease .1s;
         -o-transition: opacity .25s ease .1s;
         transition: opacity .25s ease .1s;
-        width: 150px
     }
 
-    .menu li:hover > ul {
-        opacity: 1;
-    }
+        .menu li:hover > ul {
+            opacity: 1;
+        }
 
-    .menu ul li {
-        height: 0;
-        overflow: hidden;
-        padding: 0;
-        -webkit-transition: height .25s ease .1s;
-        -moz-transition: height .25s ease .1s;
-        -o-transition: height .25s ease .1s;
-        transition: height .25s ease .1s;
+        .menu ul li {
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            -webkit-transition: height .25s ease .1s;
+            -moz-transition: height .25s ease .1s;
+            -o-transition: height .25s ease .1s;
+            transition: height .25s ease .1s;
     }
 
     .menu li:hover > ul li {
@@ -119,8 +114,8 @@ textarea {
     }
 
     .menu ul li a {
-        width: 150px;
-        padding: 4px 0 4px 20px;
+        width: 200px;
+        padding: 4px 0 4px 40px;
         margin: 0;
         border: none;
         border-bottom: 1px solid #353539;
@@ -155,7 +150,7 @@ textarea {
     text-align: justify;
 }
 
-/*#regionstart# add underline in active <li>*/
+/*add underline in active <li>*/
 
 .nav li.active {
     border-bottom: 2px solid;
@@ -169,4 +164,3 @@ textarea {
         font-weight: bold;
         margin-bottom: 5px;
     }
-    /*#regionend# underline in active <li>*/
