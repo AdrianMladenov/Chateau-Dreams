@@ -16,7 +16,3 @@ function setNavigation() {
         }
     });
 }
-
-function penka() {
-
-}

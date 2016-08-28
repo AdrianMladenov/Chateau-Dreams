@@ -11,11 +11,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.RoomId)
+            @Html.DisplayNameFor(model => model.RoomType)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.RoomId)
+            @Html.DisplayFor(model => model.RoomType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Persons)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persons)
         </dd>
 
         <dt>
@@ -32,6 +40,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.CheckOutDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Questions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Questions)
         </dd>
 
     </dl>
