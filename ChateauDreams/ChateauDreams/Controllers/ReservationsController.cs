@@ -17,7 +17,8 @@ namespace ChateauDreams.Controllers
         // GET: Reservations
         public ActionResult Index()
         {
-            return View(db.Reservations.ToList());
+            var reservations = db.Reservations.Include(r => r.Guest).ToList();
+            return View(reservations);
         }
 
         // GET: Reservations/Details/5
@@ -46,10 +47,11 @@ namespace ChateauDreams.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,RoomId,CheckInDate,CheckOutDate")] Reservations reservations)
+        public ActionResult Create([Bind(Include = "Id,RoomType,Persons,CheckInDate,CheckOutDate,Questions")] Reservations reservations)
         {
             if (ModelState.IsValid)
             {
+                reservations.Guest = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Reservations.Add(reservations);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,7 +80,7 @@ namespace ChateauDreams.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,RoomId,CheckInDate,CheckOutDate")] Reservations reservations)
+        public ActionResult Edit([Bind(Include = "Id,RoomType,Persons,CheckInDate,CheckOutDate,Questions")] Reservations reservations)
         {
             if (ModelState.IsValid)
             {
