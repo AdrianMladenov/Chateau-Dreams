@@ -24,10 +24,10 @@ textarea {
     max-width: 280px;
 }
 
-/*.wrapper {
-    background: url(../Content/Images/valley.jpg) no-repeat center center fixed;
-    /*background-size: cover;*/
-}*/
+body {
+    background: url(Images/backg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
 
 /*#region Start Live Menu("dropdown menu") css*/
 .menu,
