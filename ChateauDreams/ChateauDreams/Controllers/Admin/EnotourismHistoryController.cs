@@ -39,7 +39,7 @@ namespace ChateauDreams.Controllers.Admin
         // GET: EnotourismHistory/Create
         public ActionResult Create()
         {
-            return View("~/Views/EnotourismHistory/Create.cshtml");
+            return View("~/Views/Enotourism/EnotourismHistory/Create.cshtml");
         }
 
         // POST: EnotourismHistory/Create

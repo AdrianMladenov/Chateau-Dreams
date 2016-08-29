@@ -62,7 +62,7 @@ namespace ChateauDreams.Controllers
                 review.Author = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Reviews.Add(review);
                 db.SaveChanges();
-                this.AddNotification("You have successfully created a Reservation.", NotificationType.INFO);
+                this.AddNotification("You have successfully created a Review.", NotificationType.INFO);
                 return RedirectToAction("Index");
             }
 
@@ -89,7 +89,7 @@ namespace ChateauDreams.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Title,Text")] Review review)
@@ -122,7 +122,7 @@ namespace ChateauDreams.Controllers
 
         // POST: Reviews/Delete/5
         [HttpPost, ActionName("Delete")]
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

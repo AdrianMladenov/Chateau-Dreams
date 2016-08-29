@@ -16,6 +16,6 @@ namespace ChateauDreams.Models.Hotel
 
         [Required]
         [DataType(DataType.MultilineText)]
-        public string Body { get; set; }
+        public string Text { get; set; }
     }
 }

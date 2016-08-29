@@ -16,6 +16,7 @@ namespace ChateauDreams.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Reservations
+        [Authorize]
         public ActionResult Index()
         {
             var reservations = db.Reservations.Include(r => r.Guest).ToList();
@@ -23,6 +24,7 @@ namespace ChateauDreams.Controllers
         }
 
         // GET: Reservations/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace ChateauDreams.Controllers
         }
 
         // GET: Reservations/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +50,7 @@ namespace ChateauDreams.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,RoomType,Persons,CheckInDate,CheckOutDate,Questions")] Reservations reservations)
         {
@@ -63,6 +67,7 @@ namespace ChateauDreams.Controllers
         }
 
         // GET: Reservations/Edit/5
+        [Authorize(Roles = "Administrators")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -81,6 +86,7 @@ namespace ChateauDreams.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrators")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,RoomType,Persons,CheckInDate,CheckOutDate,Questions")] Reservations reservations)
         {
@@ -95,6 +101,7 @@ namespace ChateauDreams.Controllers
         }
 
         // GET: Reservations/Delete/5
+        [Authorize(Roles = "Administrators")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,6 +117,7 @@ namespace ChateauDreams.Controllers
         }
 
         // POST: Reservations/Delete/5
+        [Authorize(Roles = "Administrators")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
