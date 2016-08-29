@@ -62,7 +62,7 @@ namespace ChateauDreams.Controllers
                 review.Author = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Reviews.Add(review);
                 db.SaveChanges();
-                this.AddNotification("Review created.", NotificationType.INFO);
+                this.AddNotification("You have successfully created a Reservation.", NotificationType.INFO);
                 return RedirectToAction("Index");
             }
 
@@ -98,6 +98,7 @@ namespace ChateauDreams.Controllers
             {
                 db.Entry(review).State = EntityState.Modified;
                 db.SaveChanges();
+                this.AddNotification("Review edited.", NotificationType.INFO);
                 return RedirectToAction("Index");
             }
             return View(review);
@@ -128,6 +129,7 @@ namespace ChateauDreams.Controllers
             Review review = db.Reviews.Find(id);
             db.Reviews.Remove(review);
             db.SaveChanges();
+            this.AddNotification("Review deleted.", NotificationType.WARNING);
             return RedirectToAction("Index");
         }
 

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ChateauDreams.Models;
+using ChateauDreams.Extensions;
 
 namespace ChateauDreams.Controllers
 {
@@ -54,6 +55,7 @@ namespace ChateauDreams.Controllers
                 reservations.Guest = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
                 db.Reservations.Add(reservations);
                 db.SaveChanges();
+                this.AddNotification("You have successfully created a Reservation.", NotificationType.INFO);
                 return RedirectToAction("Index");
             }
 
@@ -86,6 +88,7 @@ namespace ChateauDreams.Controllers
             {
                 db.Entry(reservations).State = EntityState.Modified;
                 db.SaveChanges();
+                this.AddNotification("Reservation edited.", NotificationType.INFO);
                 return RedirectToAction("Index");
             }
             return View(reservations);
@@ -114,6 +117,7 @@ namespace ChateauDreams.Controllers
             Reservations reservations = db.Reservations.Find(id);
             db.Reservations.Remove(reservations);
             db.SaveChanges();
+            this.AddNotification("Reservation deleted.", NotificationType.WARNING);
             return RedirectToAction("Index");
         }
 
