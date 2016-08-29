@@ -205,11 +205,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Classes\Utils.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\AboutUsController.cs" />
     <Compile Include="Controllers\Admin\EnotourismHistoryController.cs" />
+    <Compile Include="Controllers\Admin\RestaurantController.cs" />
+    <Compile Include="Controllers\Admin\RoomsController.cs" />
     <Compile Include="Controllers\Admin\TastingRoomController.cs" />
     <Compile Include="Controllers\Admin\WineHistoryController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
-    <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
@@ -330,7 +332,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Hotel\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -355,8 +356,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\EditorTamplates\Date.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
-    <Content Include="Views\Hotel\Rooms.cshtml" />
-    <Content Include="Views\Hotel\Restaurant.cshtml" />
     <Content Include="Views\Reviews\Create.cshtml" />
     <Content Include="Views\Reviews\Delete.cshtml" />
     <Content Include="Views\Reviews\Details.cshtml" />
@@ -384,6 +383,21 @@
     <Content Include="Views\Reservations\Details.cshtml" />
     <Content Include="Views\Reservations\Edit.cshtml" />
     <Content Include="Views\Reservations\Index.cshtml" />
+    <Content Include="Views\Hotel\Rooms\Create.cshtml" />
+    <Content Include="Views\Hotel\Rooms\Delete.cshtml" />
+    <Content Include="Views\Hotel\Rooms\Details.cshtml" />
+    <Content Include="Views\Hotel\Rooms\Edit.cshtml" />
+    <Content Include="Views\Hotel\Rooms\Rooms.cshtml" />
+    <Content Include="Views\Hotel\Restaurant\Create.cshtml" />
+    <Content Include="Views\Hotel\Restaurant\Delete.cshtml" />
+    <Content Include="Views\Hotel\Restaurant\Details.cshtml" />
+    <Content Include="Views\Hotel\Restaurant\Edit.cshtml" />
+    <Content Include="Views\Hotel\Restaurant\Restaurant.cshtml" />
+    <Content Include="Views\Hotel\AboutUs\Create.cshtml" />
+    <Content Include="Views\Hotel\AboutUs\Delete.cshtml" />
+    <Content Include="Views\Hotel\AboutUs\Details.cshtml" />
+    <Content Include="Views\Hotel\AboutUs\Edit.cshtml" />
+    <Content Include="Views\Hotel\AboutUs\AboutUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -29,6 +29,12 @@ namespace ChateauDreams.Models
 
         public System.Data.Entity.DbSet<ChateauDreams.Models.Reservations> Reservations { get; set; }
 
+        public System.Data.Entity.DbSet<ChateauDreams.Models.Hotel.Rooms> Rooms { get; set; }
+
+        public System.Data.Entity.DbSet<ChateauDreams.Models.Hotel.Restaurant> Restaurants { get; set; }
+
+        public System.Data.Entity.DbSet<ChateauDreams.Models.Hotel.AboutUs> AboutUs { get; set; }
+
 
 
         // public System.Data.Entity.DbSet<ChateauDreams.Models.Review> Reviews { get; set; }
