@@ -353,7 +353,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\EditorTamplates\Date.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
-    <Content Include="Views\Hotel\HotelViewModel.cshtml" />
     <Content Include="Views\Hotel\Rooms.cshtml" />
     <Content Include="Views\Hotel\Restaurant.cshtml" />
     <Content Include="Views\Reviews\Create.cshtml" />
