@@ -70,10 +70,10 @@ body {
             text-decoration: none;
             border-left: 1px solid #393942;
             border-right: 1px solid #4f5058;
-            font-family:'Bradley Hand ITC', Helvetica, sans-serif;
+            font-family: 'Bradley Hand ITC', Helvetica, sans-serif;
             font-weight: bold;
             font-size: 15px;
-            color:blanchedalmond;
+            color: blanchedalmond;
             text-shadow: 1px 1px 1px rgba(0,0,0,.6);
             -webkit-transition: color .2s ease-in-out;
             -moz-transition: color .2s ease-in-out;
@@ -83,7 +83,7 @@ body {
 
     .menu ul {
         position: absolute;
-        top: 40px;
+        top: 50px;
         left: 0;
         opacity: 0;
         background: #1f2024;
@@ -99,6 +99,7 @@ body {
 
     .menu li:hover > ul {
         opacity: 1;
+        background: rgba(31, 32, 36, 0.9);
     }
 
     .menu ul li {
@@ -119,7 +120,7 @@ body {
 
     .menu ul li a {
         width: 150px;
-        padding: 4px 0 4px 13px;
+        padding: 4px 0 4px 5px;
         margin: 0;
         border: none;
         border-bottom: 1px solid #353539;
@@ -168,8 +169,19 @@ body {
         font-weight: bold;
         margin-bottom: 5px;
     }
-    /*end underline in active <li> css*/
+/*end underline in active <li> css*/
 
+/*START notifications css*/
 .alert {
-  margin: 5px 30% 0 30%;
+    margin: 4px 30% 0 30%;
+    position: absolute;
+    /*opacity: 0.9;*/
+    /*background: rgba(31, 32, 36, 0.6);*/
 }
+.alert-warning {
+    color: palevioletred;
+    /*background-color: #D9EDF7;*/
+    border-color: #ff0000;
+    opacity: 0.9;
+}
+/*END notifications css*/

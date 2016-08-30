@@ -14,6 +14,7 @@ namespace ChateauDreams.Models
         public ApplicationUser Guest { get; set; }
 
         [Required]
+        [Display(Name = "Room Type")]
         public string RoomType { get; set; }
 
         [Range(1, 20)]
@@ -21,10 +22,12 @@ namespace ChateauDreams.Models
         public int Persons { get; set; }
 
         [Required]
+        [Display(Name = "Check in")]
         [DataType(DataType.Date)]
         public DateTime CheckInDate { get; set; }
 
         [Required]
+        [Display(Name = "Check out")]
         [DataType(DataType.Date)]
         public DateTime CheckOutDate { get; set; }
 
