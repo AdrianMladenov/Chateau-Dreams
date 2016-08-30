@@ -1,3 +1,3 @@
-﻿$(".alert").delay(4000).slideUp(600, function () {
+﻿$(".alert").delay(3000).slideUp(600, function () {
     $(this).alert('close');
 });

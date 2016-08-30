@@ -117,6 +117,7 @@ namespace ChateauDreams.Controllers
             {
                 return HttpNotFound();
             }
+            this.AddNotification("Are you sure you want to delete this review?", NotificationType.WARNING);
             return View(review);
         }
 
