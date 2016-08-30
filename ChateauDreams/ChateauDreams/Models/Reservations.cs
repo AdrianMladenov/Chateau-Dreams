@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChateauDreams.Models.Hotel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace ChateauDreams.Models
         [Display(Name = "Room Type")]
         public string RoomType { get; set; }
 
+
         [Range(1, 20)]
         [Required]
         public int Persons { get; set; }
@@ -33,6 +35,8 @@ namespace ChateauDreams.Models
 
         [DataType(DataType.MultilineText)]
         public string Questions { get; set; }
+
+        
 
     }
 }

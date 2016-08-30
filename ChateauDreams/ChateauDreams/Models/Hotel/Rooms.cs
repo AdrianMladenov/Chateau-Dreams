@@ -12,10 +12,12 @@ namespace ChateauDreams.Models.Hotel
         public int Id { get; set; }
 
         [StringLength(50)]
-        public string Title { get; set; }
+        public string Type { get; set; }
 
         [Required]
         [DataType(DataType.MultilineText)]
-        public string Text { get; set; }
+        public string Description { get; set; }
+
+        public int Price { get; set; }
     }
 }
