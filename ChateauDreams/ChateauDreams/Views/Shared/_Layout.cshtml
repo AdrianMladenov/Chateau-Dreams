@@ -22,6 +22,9 @@
             </div>
             <div class="navbar-collapse collapse nav">
                 <ul class="menu">
+                    <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                        <img src="~/Content/Images/imageChat.jpg" title="Chateau Dreams" alt="additional title" />
+                    </a>
                     <li>
                         <a href="#">Hotel</a>
                         <ul>
@@ -43,7 +46,7 @@
                     <li>@Html.ActionLink("Gallery", "#", "Gallery")</li>
                     <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @Html.Partial("_LoginPartial")
+                    <div style="float:right">@Html.Partial("_LoginPartial")</div>
                 </ul>
             </div>
         </div>

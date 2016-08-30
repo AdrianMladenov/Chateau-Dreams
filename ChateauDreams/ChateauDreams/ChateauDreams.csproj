@@ -244,6 +244,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Images\backg.jpg" />
+    <Content Include="Content\Images\imageChat.jpg" />
     <Content Include="Content\Images\valley.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\accordion.css" />
