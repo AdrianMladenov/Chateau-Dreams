@@ -43,7 +43,12 @@ namespace ChateauDreams.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            return View();
+            var roomType = this.db.Rooms.Select(r => new SelectListItem
+            {
+                Text = r.Type.ToString() + " - " + r.Price.ToString() + "Euro",
+                Value = r.Type.ToString()
+            });
+            return View(new ReservationViewModel { RoomType= roomType });
         }
 
         // POST: Reservations/Create
@@ -52,12 +57,19 @@ namespace ChateauDreams.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,RoomType,Persons,CheckInDate,CheckOutDate,Questions")] Reservations reservations)
+        public ActionResult Create([Bind(Include = "Id,RoomType,Persons,CheckInDate,CheckOutDate,Questions,Type")] ReservationViewModel reservations)
         {
             if (ModelState.IsValid)
             {
-                reservations.Guest = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-                db.Reservations.Add(reservations);
+                var newReservation = new Reservations();
+                newReservation.Guest = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+                newReservation.Id = reservations.Id;
+                newReservation.Persons = reservations.Persons;
+                newReservation.Questions = reservations.Questions;
+                newReservation.CheckInDate = reservations.CheckInDate;
+                newReservation.CheckOutDate = reservations.CheckOutDate;
+                newReservation.RoomType = reservations.Type;
+                db.Reservations.Add(newReservation);
                 db.SaveChanges();
                 this.AddNotification("You have successfully created a Reservation.", NotificationType.INFO);
                 return RedirectToAction("Index");
