@@ -1,4 +1,4 @@
-﻿@model ChateauDreams.Models.Reservations
+﻿@model ChateauDreams.Models.ReservationViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -18,8 +18,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.RoomType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.RoomType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RoomType, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(x => x.Type, Model.RoomType.ToList(), "-- Choose type of room --", new { @class = "form-control input-group-lg", style="width:100%" } )
+                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -69,4 +69,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 }
