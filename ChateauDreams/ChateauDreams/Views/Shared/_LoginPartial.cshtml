@@ -3,11 +3,11 @@
 @{
     var txt = "";
     if (DateTime.Now.Hour < 12)
-    { txt = "Good Morning"; }
+    { txt = "Good Morning,"; }
     else if (DateTime.Now.Hour >= 12 && DateTime.Now.Hour < 18)
-    { txt = "Good Afternoon"; }
+    { txt = "Good Afternoon,"; }
     else
-    { txt = "Good Evening"; }
+    { txt = "Good Evening,"; }
 }
 
 @if (Request.IsAuthenticated)

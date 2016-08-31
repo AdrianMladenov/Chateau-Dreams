@@ -4,42 +4,47 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@foreach (var room in Model)
+{
+    <div class="text">
+        <h4>Room Type - @Html.DisplayFor(modelItem => room.Type)</h4>
+
+        <p>@Html.DisplayFor(modelItem => room.Description)</p>
+        <h5>Price: @Html.DisplayFor(modelItem => room.Price) EUR</h5>
+    </div>
+    if (room.Price == 320)
+    {
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/roomSuite.jpg" alt="" width="280" height="130" />
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/suiteRoom2.jpg" alt="" width="280" height="130" />
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/suitRoom1.jpg" alt="" width="280" height="130" />
+    }
+    else if (room.Price == 240)
+    {
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/roomKing.jpg" alt="" width="280" height="130" />
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/KingSizeRoom1.jpg" alt="" width="280" height="130" />
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/KingSizeRoom2.jpg" alt="" width="280" height="130" />
+    }
+    else
+    {
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/doubleRoom.jpg" alt="" width="280" height="130" />
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/doubleRoom1.jpg" alt="" width="280" height="130" />
+        <img style="display: inline; margin: 0 5px;" src="~/Content/Images/doubleRoom2.jpg" alt="" width="280" height="130" />
+    }
+
+
+    if (User.IsInRole("Administrators"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = room.Id }) @:|
+        @Html.ActionLink("Delete", "Delete", new { id = room.Id })
+    }
+
 }
 
-</table>
+@if (User.IsInRole("Administrators"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
