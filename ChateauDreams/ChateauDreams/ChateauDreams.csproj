@@ -239,6 +239,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-ChateauDreams-20160812081940.mdf" />
+    <Content Include="App_Data\aspnet-ChateauDreams-20160812081940_log.ldf">
+      <DependentUpon>aspnet-ChateauDreams-20160812081940.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-social.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -423,9 +427,7 @@
     <Content Include="Views\Hotel\AboutUs\Edit.cshtml" />
     <Content Include="Views\Hotel\AboutUs\AboutUs.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
