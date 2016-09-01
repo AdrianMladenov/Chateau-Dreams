@@ -28,6 +28,10 @@ body {
     background: url(Images/backg.jpg) no-repeat center center fixed;
     background-size: cover;
 }
+.body-home {
+    background: url(Images/valley.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
 
 /*#region Start Live Menu("dropdown menu") css*/
 .menu,
@@ -185,4 +189,9 @@ body {
     opacity: 0.9;
 }
 /*END notifications css*/
-
+/*footer allays bottom*/
+.footer-home {
+    position:fixed;
+    bottom:0;
+    color: white;
+}
