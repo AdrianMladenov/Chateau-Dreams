@@ -10,13 +10,13 @@ namespace ChateauDreams.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Review> Reviews { get; set; }
-      //  public DbSet<Album> Albums { get; set; }
+    
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create() //create before
+        public static ApplicationDbContext Create() 
         {
             return new ApplicationDbContext();
         }

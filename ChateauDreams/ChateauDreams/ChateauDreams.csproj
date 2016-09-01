@@ -211,9 +211,9 @@
     <Compile Include="Controllers\Admin\RoomsController.cs" />
     <Compile Include="Controllers\Admin\TastingRoomController.cs" />
     <Compile Include="Controllers\Admin\WineHistoryController.cs" />
-    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Extensions\NotificationExtensions.cs" />
@@ -225,7 +225,6 @@
     <Compile Include="Models\Enotourism\EnotourismHistory.cs" />
     <Compile Include="Models\Enotourism\TastingRoom.cs" />
     <Compile Include="Models\Enotourism\WineHistory.cs" />
-    <Compile Include="Models\GalleryViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Hotel\AboutUs.cs" />
@@ -252,6 +251,12 @@
     <Content Include="Content\Images\doubleRoom.jpg" />
     <Content Include="Content\Images\doubleRoom1.jpg" />
     <Content Include="Content\Images\doubleRoom2.jpg" />
+    <Content Include="Content\Images\galSlide1.jpg" />
+    <Content Include="Content\Images\galSlide2.jpg" />
+    <Content Include="Content\Images\galSlide3.jpg" />
+    <Content Include="Content\Images\galSlide4.jpg" />
+    <Content Include="Content\Images\galSlide5.jpg" />
+    <Content Include="Content\Images\galSlide6.jpg" />
     <Content Include="Content\Images\imageChat.jpg" />
     <Content Include="Content\Images\KingSizeRoom1.jpg" />
     <Content Include="Content\Images\KingSizeRoom2.jpg" />
@@ -389,7 +394,6 @@
     <Content Include="Views\Reviews\Details.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
-    <Content Include="Views\Gallery\Create.cshtml" />
     <Content Include="Views\Shared\_Notifications.cshtml" />
     <Content Include="Views\Enotourism\WineHistory\Create.cshtml" />
     <Content Include="Views\Enotourism\WineHistory\Delete.cshtml" />
@@ -426,6 +430,7 @@
     <Content Include="Views\Hotel\AboutUs\Details.cshtml" />
     <Content Include="Views\Hotel\AboutUs\Edit.cshtml" />
     <Content Include="Views\Hotel\AboutUs\AboutUs.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

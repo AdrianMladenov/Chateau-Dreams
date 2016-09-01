@@ -1,5 +1,4 @@
-﻿using ChateauDreams.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,15 +8,10 @@ namespace ChateauDreams.Controllers
 {
     public class GalleryController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
-        [Authorize(Roles = "Administrators")]
-        [HttpGet]
-        public ActionResult Create()
+        // GET: OurWines
+        public ActionResult Index()
         {
-            //ViewData["My Message"] = "Albums"; // ? ili viewBag
             return View();
         }
-        
     }
 }
