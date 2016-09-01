@@ -15,7 +15,7 @@ namespace ChateauDreams.Models
 
         public ApplicationUser Guest { get; set; }
         
-        [Required]
+       
         [Display(Name = "Room Type")]
         public IEnumerable<SelectListItem> RoomType { get; set; }
 

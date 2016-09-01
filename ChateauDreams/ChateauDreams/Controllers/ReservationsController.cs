@@ -45,7 +45,7 @@ namespace ChateauDreams.Controllers
         {
             var roomType = this.db.Rooms.Select(r => new SelectListItem
             {
-                Text = r.Type.ToString() + " - " + r.Price.ToString() + "Euro",
+                Text = r.Type.ToString() + " - " + r.Price.ToString() + " EUR",
                 Value = r.Type.ToString()
             });
             return View(new ReservationViewModel { RoomType= roomType });
